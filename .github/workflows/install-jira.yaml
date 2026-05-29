@@ -8,11 +8,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Check OS
-        run: |
-          uname -a
-          cat /etc/os-release
-
       - name: Installation of jira binary
         run: |
+          cd ~
           wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-11.3.6-x64.exe
