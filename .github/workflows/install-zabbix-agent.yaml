@@ -1,0 +1,20 @@
+name: Install Zabbix Agent
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-docker:
+    runs-on: self-hosted
+
+    steps:
+      - name: download za binary
+        run: |
+          cd ~
+          wget https://cdn.zabbix.com/zabbix/binaries/stable/7.0/7.0.26/zabbix_agent-7.0.26-linux-3.0-amd64-static.tar.gz
+          
+      - name: extract za binary
+        run: |
+          cd ~
+          tar -zxvf zabbix_agent-7.0.26-linux-3.0-amd64-static.tar.gz -C /usr/local/zabbix
+          
